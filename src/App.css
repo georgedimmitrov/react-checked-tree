@@ -2,6 +2,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  color: white;
 }
 
 .container {
@@ -16,4 +17,9 @@
 .common {
   width: 100%;
   padding: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding-inline-start: 15px;
 }
