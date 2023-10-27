@@ -126,40 +126,43 @@ const CheckedTree: React.FC<CheckedTreeProps> = ({ data }) => {
 
   const renderTree = (data: Item[]) => {
     return (
-      <ul>
-        {data.map((item) => {
-          return (
-            <li>
-              <span
-                onClick={() => handleExpandToggle(item.id)}
-                style={{
-                  cursor: "pointer",
-                  paddingLeft: item.children.length > 0 ? "0" : "10px",
-                }}
-              >
-                {item.children.length > 0 && ">"}
-              </span>
-              <input
-                type="checkbox"
-                checked={checkedItems[item.id] || false}
-                onChange={() => handleCheckToggle(item.id)}
-              />
-              {item.name}
-              {expandedItems[item.id] &&
-                item.children.length > 0 &&
-                renderTree(item.children)}
-            </li>
-          );
-        })}
-      </ul>
+      <>
+        <ul>
+          {data.map((item) => {
+            return (
+              <li>
+                <span
+                  onClick={() => handleExpandToggle(item.id)}
+                  style={{
+                    cursor: "pointer",
+                    paddingLeft: item.children.length > 0 ? "0" : "10px",
+                  }}
+                >
+                  {item.children.length > 0 && ">"}
+                </span>
+                <input
+                  type="checkbox"
+                  checked={checkedItems[item.id] || false}
+                  onChange={() => handleCheckToggle(item.id)}
+                />
+                {item.name}
+                {expandedItems[item.id] &&
+                  item.children.length > 0 &&
+                  renderTree(item.children)}
+              </li>
+            );
+          })}
+        </ul>
+      </>
     );
   };
 
   return (
-    <div style={{ border: "solid black 1px" }}>
+    <div style={{ border: "solid black 1px", padding: "5px" }}>
+      <h3 style={{ textAlign: "center" }}>Checked Tree</h3>
       <input
         type="text"
-        style={{ padding: "10px", width: "100%", color: "#000" }}
+        style={{ padding: "10px", width: "100%", color: "#fff" }}
         value={searchQuery}
         onChange={handleSearchChange}
         placeholder="Search.."

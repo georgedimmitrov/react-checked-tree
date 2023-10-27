@@ -6,26 +6,14 @@ import data from "./data";
 import SwapItemsInCarts from "./SwapItemsInCarts";
 
 function App() {
-  const [formData, setFormData] = useState({ checkedTree: [] });
-
-  const handleSubmit = () => {
-    console.log(formData);
-  };
-
   const formattedData = formatData(data);
 
   return (
     <>
       <div className="container">
-        <h1>Mock Form</h1>
-        <input placeholder="Mock Input" className="common" />
-        <input placeholder="Mock Input" className="common" />
         <CheckedTree data={formattedData} />
 
         <SwapItemsInCarts />
-        <button onClick={handleSubmit} className="common">
-          Submit
-        </button>
       </div>
     </>
   );

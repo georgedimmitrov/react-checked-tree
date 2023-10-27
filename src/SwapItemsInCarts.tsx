@@ -34,27 +34,32 @@ const SwapItemsInCarts = () => {
   };
 
   return (
-    <div style={{ display: "flex", gap: "30px" }}>
-      <div>
-        {cartA?.map((aItem, i) => (
+    <>
+      <div style={{ border: "solid black 1px", padding: "5px" }}>
+        <h3 style={{ textAlign: "center" }}>Swap Odd Items</h3>
+        <div style={{ display: "flex", gap: "30px" }}>
           <div>
-            {i + 1}.{aItem}
+            {cartA?.map((aItem, i) => (
+              <div>
+                {i + 1}.{aItem}
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
 
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <button onClick={swapOdds}>Swap Odds</button>
-      </div>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <button onClick={swapOdds}>Swap Odds</button>
+          </div>
 
-      <div>
-        {cartB?.map((bItem, i) => (
           <div>
-            {i + 1}.{bItem}
+            {cartB?.map((bItem, i) => (
+              <div>
+                {i + 1}.{bItem}
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
