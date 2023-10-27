@@ -3,6 +3,7 @@ import CheckedTree from "./CheckedTree";
 import { formatData } from "./utils";
 import "./App.css";
 import data from "./data";
+import SwapItemsInCarts from "./SwapItemsInCarts";
 
 function App() {
   const [formData, setFormData] = useState({ checkedTree: [] });
@@ -20,6 +21,8 @@ function App() {
         <input placeholder="Mock Input" className="common" />
         <input placeholder="Mock Input" className="common" />
         <CheckedTree data={formattedData} />
+
+        <SwapItemsInCarts />
         <button onClick={handleSubmit} className="common">
           Submit
         </button>
