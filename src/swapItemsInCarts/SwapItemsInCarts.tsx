@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Cart from "./Cart";
 
 const SwapItemsInCarts = () => {
   const [cartA, setCartA] = useState<string[]>([
@@ -21,13 +22,10 @@ const SwapItemsInCarts = () => {
   const swapOdds = () => {
     const copyCartA = [...cartA];
     const copyCartB = [...cartB];
-    copyCartA.forEach((cartAItem: string, i: number) => {
-      if (i % 2 === 0) {
-        const tempItem = copyCartA[i];
-        copyCartA[i] = copyCartB[i];
-        copyCartB[i] = tempItem;
-      }
-    });
+    for (let i = 0; i < cartA.length; i += 2) {
+      copyCartA[i] = cartB[i];
+      copyCartB[i] = cartA[i];
+    }
 
     setCartA(copyCartA);
     setCartB(copyCartB);
@@ -37,26 +35,12 @@ const SwapItemsInCarts = () => {
     <>
       <div style={{ border: "solid black 1px", padding: "5px" }}>
         <h3 style={{ textAlign: "center" }}>Swap Odd Items</h3>
-        <div style={{ display: "flex", gap: "30px" }}>
-          <div>
-            {cartA?.map((aItem, i) => (
-              <div>
-                {i + 1}.{aItem}
-              </div>
-            ))}
-          </div>
-
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <button onClick={swapOdds}>Swap Odds</button>
-          </div>
-
-          <div>
-            {cartB?.map((bItem, i) => (
-              <div>
-                {i + 1}.{bItem}
-              </div>
-            ))}
-          </div>
+        <div className="flex carts-parent-container">
+          <Cart items={cartA} cartNumber={1} />
+          <button className="swap-button" onClick={swapOdds}>
+            Swap Odds
+          </button>
+          <Cart items={cartB} cartNumber={2} />
         </div>
       </div>
     </>

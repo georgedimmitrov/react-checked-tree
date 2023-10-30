@@ -23,3 +23,30 @@ ul {
   list-style-type: none;
   padding-inline-start: 15px;
 }
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carts-parent-container {
+  gap: 20px;
+}
+
+.swap-button {
+  padding: 10px;
+  border: 1px solid white;
+}
+
+.cart-container {
+  border: 1px solid white;
+  border-radius: 10px;
+  flex-direction: column;
+  padding: 0 30px 20px 30px;
+  align-items: flex-start;
+}
+
+.cart-title {
+  border-bottom: 1px solid white;
+}

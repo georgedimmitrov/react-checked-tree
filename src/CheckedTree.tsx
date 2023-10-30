@@ -130,7 +130,7 @@ const CheckedTree: React.FC<CheckedTreeProps> = ({ data }) => {
         <ul>
           {data.map((item) => {
             return (
-              <li>
+              <li key={item.id}>
                 <span
                   onClick={() => handleExpandToggle(item.id)}
                   style={{
