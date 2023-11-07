@@ -3,6 +3,7 @@ import { formatData } from "./utils";
 import "./App.css";
 import data from "./data";
 import SwapItemsInCarts from "./swapItemsInCarts/SwapItemsInCarts";
+import TabsContainer from "./threeTabs/TabsContainer";
 
 function App() {
   const formattedData = formatData(data);
@@ -13,6 +14,8 @@ function App() {
         <CheckedTree data={formattedData} />
 
         <SwapItemsInCarts />
+
+        <TabsContainer />
       </div>
     </>
   );

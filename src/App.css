@@ -9,9 +9,12 @@
   margin: 30px;
   width: 500px;
   color: black;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  /* display: flex; */
+  /* flex-direction: column; */
+  display: grid;
+  grid-template-columns: 300px auto 300px;
+  grid-template-rows: 1fr 1fr;
+  gap: 30px;
 }
 
 .common {
@@ -49,4 +52,24 @@ ul {
 
 .cart-title {
   border-bottom: 1px solid white;
+}
+
+.tabs-container-component {
+  border: 1px solid black;
+}
+
+.tabs-container-container {
+  display: flex;
+  flex: 10px;
+  gap: 10px;
+}
+
+.tab {
+  border-bottom: 1px solid white;
+  padding-bottom: 3px;
+  cursor: pointer;
+}
+.tab.active b {
+  color: greenyellow;
+  border-color: greenyellow;
 }
